@@ -407,7 +407,12 @@ func (this *parser) parseMultilineContent() {
 				scan.SetPosition(start + initlvl*this.indent.indentType)
 				scan.Ignore()
 			} else {
-				scan.SetPosition(start + 1)
+				// lvl == -1 means we have accepted newline during getIndent() call
+				// so now we have to roll it back
+				// note: -1 is actually valid for both of string endings (\n will be the last char anyway)
+				beforeNewline := scan.Position() - 1
+				scan.SetStartPosition(beforeNewline)
+				scan.SetPosition(beforeNewline)
 			}
 			continue
 		}
@@ -555,6 +560,7 @@ loop1:
 
 func (this *parser) getIndent() int {
 	scan := this.scan
+	fmt.Println("getting indent")
 
 	var indentchar string = " "
 	if this.indent.indentType == 0 {
@@ -578,7 +584,7 @@ func (this *parser) getIndent() int {
 		if cnt > 1 {
 			this.indent.setType(cnt)
 		} else {
-			this.error("Space indentation requires atleast 2 spaces or more.")
+			this.error("Space indentation requires at least 2 spaces or more.")
 		}
 	}
 	if scan.AcceptNewLine() {
