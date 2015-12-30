@@ -560,7 +560,6 @@ loop1:
 
 func (this *parser) getIndent() int {
 	scan := this.scan
-	fmt.Println("getting indent")
 
 	var indentchar string = " "
 	if this.indent.indentType == 0 {
