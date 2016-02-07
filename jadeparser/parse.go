@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/zdebeer99/gojade/scanner"
+	"github.com/Lnd-stoL/gojade/scanner"
 )
 
 type stateFn func(*parser) stateFn

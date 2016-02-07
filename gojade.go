@@ -2,7 +2,7 @@ package gojade
 
 import (
 	"bytes"
-	"github.com/zdebeer99/gojade/jadeparser"
+	"github.com/Lnd-stoL/gojade/jadeparser"
 	"io"
 	"reflect"
 )
