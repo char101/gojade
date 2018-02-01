@@ -2,9 +2,10 @@ package gojade
 
 import (
 	"bytes"
-	"github.com/Lnd-stoL/gojade/jadeparser"
 	"io"
 	"reflect"
+
+	"github.com/char101/gojade/jadeparser"
 )
 
 // Engine keeps configuration information and redirect calls to the jadeparser.

@@ -3,7 +3,7 @@ package gojade
 import (
 	"io/ioutil"
 
-	"github.com/Lnd-stoL/gojade/jadeparser"
+	"github.com/char101/gojade/jadeparser"
 )
 
 type templateLoader struct {

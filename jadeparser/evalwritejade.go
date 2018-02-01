@@ -176,8 +176,8 @@ func (this *jadewriter) KeyValueAttribute(keyvalue *KeyValueToken) {
 	this.write(keyvalue.Key)
 	this.write("=\"")
 	switch strings.ToLower(keyvalue.Key) {
-	case "style":
-		this.styleAttribute(valueNode, escape)
+	// case "style":
+	// 	this.styleAttribute(valueNode, escape)
 	case "class":
 		this.classAttribute(valueNode, escape)
 	default:
